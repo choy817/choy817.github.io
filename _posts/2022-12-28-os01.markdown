@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[운영체제]운영체제의 역할과 구조"
-category: os
+category: 운영체제
 ---
 
 ### 운영체제란?
