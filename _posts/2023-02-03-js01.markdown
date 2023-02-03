@@ -1,0 +1,69 @@
+---
+layout: post
+title: "동적으로 DOM 요소 추가하기"
+category: JavaScript
+---
+HTML에서 자바스크립트를 이용해 지정한 HTML 요소를 만들어 반환할 수 있다.    
+&nbsp;
+
+### DOM 요소 추가
+---
+
+|메소드|내용|
+|---|---|
+|createElemnet|요소의 생성|   
+|createTextNode|텍스트 노드를 생성|
+|appendChild|자식 요소를 만들 때 사용|   
+
+&nbsp;
+
+ex)    
+```html
+ <html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+  </head>
+  <body>
+    <script>
+      let div = document.createElement( 'div' );
+      document.body.appendChild(document.createTextNode('hello world'));
+    </script>
+  </body>
+</html>
+ ```   
+ 
+ ![createElement](https://user-images.githubusercontent.com/83875844/216478855-7348f9a9-d064-45ea-b546-e86a6a79771f.png)   
+
+### class가 있는 createElement()를 사용  
+--- 
+(1) Element.classList.add 사용   
+```javascript
+let div = document.createElement('div');
+div.classList.add('class1');
+let text = document.createTextNode('hi Javascript!');
+div.appendChild(text);
+document.body.appendChild(div);
+
+//css
+.class1{
+  color : blue;
+}
+```
+![class test1](https://user-images.githubusercontent.com/83875844/216478567-33a8bc2c-7b73-4b01-882b-6ef01e40eecf.png)   
+&nbsp;
+
+(2) className 사용
+```javascript
+let div = document.createElement('div');
+div.className = 'class';
+let text = document.createTextNode('hi JavaScript!');
+div.appendChild(text);
+document.body.appendChild(div);
+
+//css
+.class {
+  color: orange;
+}
+```
+![class test2](https://user-images.githubusercontent.com/83875844/216479241-c4bbde9b-0737-47f7-a36f-452446db80a0.png)
