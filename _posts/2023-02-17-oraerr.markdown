@@ -1,0 +1,15 @@
+---
+layout: post
+title: "ORA - 12514 listener refused the connection with the following error"
+category: Oracle
+---
+
+오라클 클라우드 접속 기간이 만료되어서 발생하는 오류이다.   
+클라우드 접속 후 ATP에 들어가면
+![ATP main](https://user-images.githubusercontent.com/83875844/219416807-185134f8-6ac7-48ed-8c5c-e33ebacca3d8.png)
+
+데이터베이스가 정지된 상태이다   
+![dbstop](https://user-images.githubusercontent.com/83875844/219417208-28bff718-f794-4b95-ba96-8226f7b4e3c8.png)
+
+이름 눌러서 세부정보로 들어간 후 다시 시작해주면 된다.   
+![description](https://user-images.githubusercontent.com/83875844/219417401-d159d201-4d9e-4ccb-9aff-021af6eef6c2.png)
