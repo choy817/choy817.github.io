@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[네트워크]CPU 스케줄링 알고리즘"
-category: 네트워크
+title: "[운영체제]CPU 스케줄링 알고리즘"
+category: 운영체제
 ---
 
 CPU 스케줄러는 스케줄링 알고리즘에 따라 프로세스에서 해야 하는 일을 스레드 단위로 CPU에 할당한다   

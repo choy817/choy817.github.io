@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[네트워크]프로세스"
-category: 네트워크
+title: "[운영체제]프로세스"
+category: 운영체제
 ---
 
 ### 프로세스란?
