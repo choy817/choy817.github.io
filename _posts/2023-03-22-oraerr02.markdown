@@ -1,0 +1,14 @@
+---
+layout: post
+title: "IO오류 : mismatch with the server cert dn"
+category: Oracle
+---
+
+### 문제   
+mismatch with the server cert dn   
+\- 데이터베이스에 연결할 때 서버 인증서 DN과 일치하지 않아 발생한 오류   
+&nbsp;
+
+### 해결   
+클라우드 전자지갑을 교체하니 다시 정상작동함
+![change server cert](https://user-images.githubusercontent.com/83875844/226831275-b5b5a67b-7634-4a33-832d-13763b7e7afd.png)
