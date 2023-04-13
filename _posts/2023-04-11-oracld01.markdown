@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Oracle Cloud DB 시간대 바꾸기"
+category: Oracle
+---
+
+### 문제   
+---
+클라우드 DB 시간대는 GMT인데 웹페이지 시간대는 KST라서 게시판 글 작성시 시간대가 맞지 않는다.   
+&nbsp;
+
+### 해결 
+---  
+SYSDATE 대신에 CURRENT_DATE 사용
