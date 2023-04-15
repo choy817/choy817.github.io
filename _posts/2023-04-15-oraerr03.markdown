@@ -1,0 +1,18 @@
+---
+layout: post
+title: "로케일을 인식 할 수 없습니다."
+category: Oracle
+---
+
+### 문제   
+---
+클라우드 접속만료 해결 후 발생한 문제   
+&nbsp;
+
+### 해결   
+---
+찾아보니 mac 시스템 환경설정에서 지역을 미국으로 바꾸고 다시 대한민국으로 바꿔주면 잘 된다고 함   
+
+![change local](https://github.com/choy817/choy817.github.io/assets/83875844/d4b4fb10-1924-4223-923e-89e9c47ab47a)   
+
+정말 잘 된다
