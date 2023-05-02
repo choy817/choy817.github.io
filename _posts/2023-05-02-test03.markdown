@@ -1,0 +1,62 @@
+---
+layout: post
+title: "[기초]문자열 섞기"
+category: Programmers
+---
+
+### 문제
+---
+길이가 같은 두 문자열 str1과 str2가 주어집니다.
+
+두 문자열의 각 문자가 앞에서부터 서로 번갈아가면서 한 번씩 등장하는 문자열을 만들어 return 하는 solution 함수를 완성해 주세요.
+
+- 제한사항
+  - 1 ≤ str1의 길이 = str2의 길이 ≤ 10
+  - str1과 str2는 알파벳 소문자로 이루어진 문자열입니다.
+
+- 입출력 예
+
+|str1 |	str2	|result|
+|---  |---     |---     |
+|"aaaaa"	|"bbbbb"|	"ababababab"|
+
+
+### 제출한 답
+---
+```java
+class Solution {
+    public String solution(String str1, String str2) {
+        String answer = "";
+        char[] msg1=str1.toCharArray();
+        char[] msg2=str2.toCharArray();
+        int i=0;
+        while (i<msg1.length){
+            answer+=""+msg1[i]+msg2[i];
+            i++;
+        }    
+        return answer;
+    }
+}
+```
+
+toCharArray를 사용해서 str1, str2의 문자를 쪼개서 char형태의 배열에 저장, 반복문을 돌면서 answer에 문자를 번갈아 저장한다. ""를 같이 저장하는 이유는 char는 아스키 코드값으로 저장되기 때문에 숫자 연산이 되어 버린다.
+
+
+### 더 나은 답
+---
+```java
+class Solution {
+    public String solution(String str1, String str2) {
+        String answer = "";
+
+        for(int i = 0; i < str1.length(); i++){
+            answer+= str1.charAt(i);
+            answer+= str2.charAt(i);
+        }
+
+        return answer;
+    }
+}
+```
+
+쪼갠 문자를 굳이 변수저장 할 필요가 없다면 바로 answer에다 반복문을 돌면서 대입하는 방법도 좋을 듯 하다.
