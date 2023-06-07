@@ -1,0 +1,79 @@
+---
+layout: post
+title: "[기초]배열 만들기 2"
+category: Programmers
+---
+
+### 문제
+---
+정수 l과 r이 주어졌을 때, l 이상 r이하의 정수 중에서 숫자 "0"과 "5"로만 이루어진 모든 정수를 오름차순으로 저장한 배열을 return 하는 solution 함수를 완성해 주세요.
+
+만약 그러한 정수가 없다면, -1이 담긴 배열을 return 합니다.
+
+&nbsp;
+
+
+- 제한사항
+    - 1 ≤ l ≤ r ≤ 1,000,000
+
+&nbsp;
+
+입출력 예
+
+|l	|r	|result|
+|---|---|---|
+|5	|555|	[5, 50, 55, 500, 505, 550, 555]|
+|10	|20	|[-1]|
+
+
+입출력 예 설명   
+
+입출력 예 #1   
+5 이상 555 이하의 0과 5로만 이루어진 정수는 작은 수부터 5, 50, 55, 500, 505, 550, 555가 있습니다. 따라서 [5, 50, 55, 500, 505, 550, 555]를 return 합니다.   
+
+입출력 예 #2   
+10 이상 20 이하이면서 0과 5로만 이루어진 정수는 없습니다. 따라서 [-1]을 return 합니다.   
+
+&nbsp;
+
+### 제출한 답
+---
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+    public int[] solution(int l, int r) {
+        //리턴값을 담을 list 선언
+        List<Integer> answerList = new ArrayList<>();
+        for(int i=l;i<=r;i++){
+            //값을 문자로 만들기
+            String num=""+i;
+            // 조건을 확인할 cnt
+            // 조건을 모두 확인했을 경우 다시 0으로 초기화해서 반복해야 한다
+            int cnt=0;
+            //num 문자의 길이만큼 반복
+            for(int j=0;j<num.length();j++){
+                //문자로 만든 값이 '0' 또는 '5'로 이루어져 있는지 검사
+                if(num.charAt(j)==48 || num.charAt(j) == 53){
+                    //조건이 맞을 경우 cnt 증가
+                    cnt++;
+                }
+                //현재 cnt의 값과 비교한 값의 길이가 동일할 경우 리스트에 삽입
+                //조건이 맞을 경우 0 또는 5로 이루어진 숫자에 해당함
+                if(cnt == num.length()){
+                    answerList.add(i);
+                }
+            }
+        }
+        //추가한 리스트를 다시 배열로 만드는 과정
+        int []answer = answerList.stream().mapToInt(i->i).toArray();
+        //정수가 없을 경우 반환할 배열
+        int []empty = {-1};
+        if(answer.length==0){
+            return empty;
+        }
+        return answer;
+    }
+}
+```
