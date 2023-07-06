@@ -199,9 +199,9 @@ yat:
 # set follow_site_theme true to make utterances' theme follow the site's
 
  utterances:
-   repo: "choy817.github.io"
-   issue_term: "comment"
-   label: "utterances comment"
+   repo: "choy817/choy817.github.io"
+   issue_term: "pathname"
+   label: "comment"
    theme: "github-light"
    follow_site_theme: true
 
