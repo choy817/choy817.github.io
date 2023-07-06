@@ -58,14 +58,6 @@ sidebar:
 
     {%- assign result = hidden | where_exp: "item", "item == 'comments'" -%}
     {%- if result.size == 0 -%}
-    <!--utterances comment-->
-    <script src="https://utteranc.es/client.js"
-        repo="choy817/choy817.github.io"
-        issue-term="pathname"
-        theme="preferred-color-scheme"
-        crossorigin="anonymous"
-        async>
-    </script>
     <div class="post-comments">
       {%- if page.comments != false -%}
 
@@ -87,3 +79,14 @@ sidebar:
 
   </section>
 </div>
+<div>
+  <!--utterances comment-->
+  <script src="https://utteranc.es/client.js"
+  repo="choy817/choy817.github.io"
+  issue-term="pathname"
+  theme="preferred-color-scheme"
+  crossorigin="anonymous"
+  async>
+  </script>
+</div>
+
