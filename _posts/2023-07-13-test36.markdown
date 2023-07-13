@@ -1,0 +1,59 @@
+---
+layout: post
+title: "[기초]문자 개수 세기"
+category: Programmers
+---
+
+### 문제
+---
+알파벳 대소문자로만 이루어진 문자열 my_string이 주어질 때, my_string에서 'A'의 개수, my_string에서 'B'의 개수,..., my_string에서 'Z'의 개수, my_string에서 'a'의 개수, my_string에서 'b'의 개수,..., my_string에서 'z'의 개수를 순서대로 담은 길이 52의 정수 배열을 return 하는 solution 함수를 작성해 주세요.                  
+&nbsp;
+
+
+- 제한사항
+    - 0 ≤ r < q ≤ 20
+
+&nbsp;
+
+입출력 예
+
+|my_string	|result|
+|---|---|
+|"Programmers"	|[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0]|
+
+&nbsp;
+
+입출력 예 설명   
+
+입출력 예 #1
+
+예제 1번의 my_string에서 'P'가 1개, 'a'가 1개, 'e'가 1개, 'g'가 1개, 'm'이 2개, 'o'가 1개, 'r'가 3개, 's'가 1개 있으므로 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0]를 return 합니다.         
+
+&nbsp;
+
+### 제출한 답
+---
+```java
+class Solution {
+    public int[] solution(String my_string) {
+        int[] answer = new int[52];
+        //문자열을 쪼개서 저장
+        char[] chars = my_string.toCharArray();
+        for (int i = 0; i <chars.length ; i++) {
+            //쪼갠 문자가 대문자일 경우
+            if(chars[i] >=65 && chars[i] <=90){
+                //대문자 알파벳 위치의 인덱스에 숫자 1을 누적
+                answer[chars[i]-65]+=1;
+            //쪼갠 문자가 소문자일 경우    
+            }if(chars[i]>=97 && chars[i]<=122){
+                //소문자 알파벳 위치의 인덱스에 숫자 1을 누적
+                answer[chars[i]-71]+=1;
+            }
+        }
+        return answer;
+    }
+}
+```
+&nbsp; 
+
+
