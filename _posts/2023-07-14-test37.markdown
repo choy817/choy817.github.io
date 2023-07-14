@@ -1,0 +1,76 @@
+---
+layout: post
+title: "[기초]배열 만들기 1"
+category: Programmers
+---
+
+### 문제
+---
+정수 n과 k가 주어졌을 때, 1 이상 n이하의 정수 중에서 k의 배수를 오름차순으로 저장한 배열을 return 하는 solution 함수를 완성해 주세요.                     
+&nbsp;
+
+
+- 제한사항
+    - 1 ≤ n ≤ 1,000,000
+    - 1 ≤ k ≤ min(1,000, n)
+
+&nbsp;
+
+입출력 예
+
+|n|	k|	result|
+|---|---|---|
+|10	|3	|[3, 6, 9]|
+|15	|5	|[5, 10, 15]|
+
+&nbsp;
+
+입출력 예 설명   
+
+입출력 예 #1   
+1 이상 10 이하의 3의 배수는 3, 6, 9 이므로 [3, 6, 9]를 return 합니다.   
+
+입출력 예 #2   
+1 이상 15 이하의 5의 배수는 5, 10, 15 이므로 [5, 10, 15]를 return 합니다.            
+
+&nbsp;
+
+### 제출한 답
+---
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+class Solution {
+    public int[] solution(int n, int k) {
+        List<Integer> list= new ArrayList<>();
+        for(int i=1;i<=n;i++){
+            if(i%k==0){
+                list.add(i);
+            }
+        }
+        Collections.sort(list);
+        int[] answer = list.stream().mapToInt(i->i).toArray();
+        return answer;
+    }
+}
+```
+&nbsp; 
+
+
+### 더 나은 답
+```java
+class Solution {
+    public int[] solution(int n, int k) {
+        int[] answer = new int[n/k];
+        for(int i = 1; i<=n; i++){
+            if(i%k==0){
+                answer[i/k-1]=i;
+            }
+        }
+        return answer;
+    }
+}
+```
+리스트 변환 필요 없이 배열로도 풀 수 있다
